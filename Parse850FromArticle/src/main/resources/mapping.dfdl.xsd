@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
+            xmlns:ibmEdiFmt="http://www.ibm.com/dfdl/EDI/Format"
+            xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+
+    <xsd:import namespace="http://www.ibm.com/dfdl/EDI/Format"
+                schemaLocation="/EDIFACT-Common/IBM_EDI_Format.dfdl.xsd"/>
+
+    <xsd:annotation>
+        <xsd:appinfo source="http://www.ogf.org/dfdl/">
+            <dfdl:format ref="ibmEdiFmt:EDIFormat"/>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <xsd:element ibmSchExtn:docRoot="true" name="X850Interchange">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:sequence dfdl:initiatedContent="yes">
+                    <xsd:element dfdl:initiator="ISA" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                                 name="interchange-header">
+                        <xsd:complexType>
+                            <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                                <xsd:element name="auth-qual" type="alpha2-2"/>
+                                <xsd:element name="auth-id" type="alpha10-10"/>
+                                <xsd:element name="security-qual" type="alpha2-2"/>
+                                <xsd:element name="security-id" type="alpha10-10"/>
+                                <xsd:element name="sender-qual" type="alpha2-2"/>
+                                <xsd:element name="sender-id" type="alpha15-15"/>
+                                <xsd:element name="receiver-qual" type="alpha2-2"/>
+                                <xsd:element name="receiver-id" type="alpha15-15"/>
+                                <xsd:element name="date" type="alpha6-6"/>
+                                <xsd:element name="time" type="alpha4-4"/>
+                                <xsd:element name="standard" type="alpha1-1"/>
+                                <xsd:element name="version" type="alpha5-5"/>
+                                <xsd:element name="interchange-control-number" type="alpha9-9"/>
+                                <xsd:element name="ack" type="alpha1-1"/>
+                                <xsd:element name="test" type="alpha1-1"/>
+                                <xsd:element name="s-delimiter" type="alpha1-1"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element dfdl:initiator="GS" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                                 name="group-header">
+                        <xsd:complexType>
+                            <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                                <xsd:element name="code" type="alpha2-2"/>
+                                <xsd:element name="sender" type="alpha15-15"/>
+                                <xsd:element name="receiver" type="alpha15-15"/>
+                                <xsd:element name="date" type="alpha8-8"/>
+                                <xsd:element name="time" type="alpha4-4"/>
+                                <xsd:element name="group-control-number" type="alpha1-9"/>
+                                <xsd:element name="standard" type="alpha1-2"/>
+                                <xsd:element name="version" type="alpha1-12"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element dfdl:initiator="ST" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                                 name="transaction-set-header">
+                        <xsd:complexType>
+                            <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                                <xsd:element name="code" type="alpha3-3"/>
+                                <xsd:element name="transaction-set-control-number" type="alpha4-9"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+
+                <xsd:element name="party-identifications">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element dfdl:initiator="N1" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                                         name="party-identifications" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                                        <xsd:element name="entity-ic" type="alpha2-3"/>
+                                        <xsd:element name="name" type="alpha1-60"/>
+                                        <xsd:element name="id-code-qualifier" type="alpha1-2"/>
+                                        <xsd:element name="id-code" type="alpha2-80"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="items">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="items" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element dfdl:initiator="CTT" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                             name="transaction-totals">
+                    <xsd:complexType>
+                        <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                            <xsd:element name="number-of-line-items" type="alpha1-6"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element dfdl:initiator="SE" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                             name="transaction-set-trailer">
+                    <xsd:complexType>
+                        <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                            <xsd:element name="number-of-included-segments" type="alpha1-10"/>
+                            <xsd:element name="transaction-set-control-number" type="alpha4-9"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element dfdl:initiator="GE" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                             name="functional-group-trailer">
+                    <xsd:complexType>
+                        <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                            <xsd:element name="number-of-transaction-sets" type="alpha1-6"/>
+                            <xsd:element name="group-control-number" type="alpha1-9"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element dfdl:initiator="IEA" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                             name="interchange-control-trailer">
+                    <xsd:complexType>
+                        <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                            <xsd:element name="number-of-function-groups-included" type="alpha1-5"/>
+                            <xsd:element name="interchange-control-number" type="alpha9-9"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element ibmSchExtn:docRoot="true" name="items">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element dfdl:ref="ibmEdiFmt:EDISegmentFormat" dfdl:initiator="PO1"
+                             name="baseline_item_data">
+                    <xsd:complexType>
+                        <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                            <xsd:element name="assigned_identification" type="alpha1-20"/>
+                            <xsd:element name="quantity" type="alpha1-15"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element dfdl:ref="ibmEdiFmt:EDISegmentFormat" dfdl:initiator="PID"
+                             name="item_description">
+                    <xsd:complexType>
+                        <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                            <xsd:element name="item_description_type" type="alpha1-2"/>
+                            <xsd:element minOccurs="0" name="description" type="alpha1-80"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element dfdl:initiator="REF" dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+                             name="reference-information" maxOccurs="3">
+                    <xsd:complexType>
+                        <xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+                            <xsd:element name="id_qualifier" type="alpha2-3"/>
+                            <xsd:element name="reference_id" type="alpha1-50"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:simpleType name="alpha1-1">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-2">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-5">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="5"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-6">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="6"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-9">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="9"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-10">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-12">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-15">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-20">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="20"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-50">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="50"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-60">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="60"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha1-80">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="80"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha2-2">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="2"/>
+            <xsd:maxLength value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha2-3">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="2"/>
+            <xsd:maxLength value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha2-80">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="50"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha3-3">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="3"/>
+            <xsd:maxLength value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha4-4">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="4"/>
+            <xsd:maxLength value="4"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha4-9">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="4"/>
+            <xsd:maxLength value="9"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha5-5">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="5"/>
+            <xsd:maxLength value="5"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha6-6">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="6"/>
+            <xsd:maxLength value="6"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha8-8">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="8"/>
+            <xsd:maxLength value="8"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha9-9">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="9"/>
+            <xsd:maxLength value="9"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha10-10">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="10"/>
+            <xsd:maxLength value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="alpha15-15">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="15"/>
+            <xsd:maxLength value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

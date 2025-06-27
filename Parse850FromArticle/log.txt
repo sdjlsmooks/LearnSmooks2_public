@@ -1,0 +1,1053 @@
+2025-06-19 13:18:03.608 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-19 13:18:04.346 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-19 13:18:04.375 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-19 13:18:07.117 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-19 13:18:07.117 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-19 13:18:07.118 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-19 13:18:07.218 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-19 13:18:07.223 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-19 13:18:07.941 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-19 13:18:07.941 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 09:04:54.796 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 09:04:55.539 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 09:04:55.568 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 09:04:58.353 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 09:04:58.353 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 09:04:58.353 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 09:04:58.448 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 09:04:58.454 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 09:04:59.188 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 09:04:59.188 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 10:29:24.925 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 10:29:25.789 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 10:29:25.823 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:29:28.376 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 10:29:28.377 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:29:28.377 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 10:29:28.377 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 10:29:28.577 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 10:29:28.577 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 10:29:28.719 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 10:29:28.724 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:29:29.396 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 10:29:29.397 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 10:30:44.463 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 10:30:45.174 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 10:30:45.206 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:30:47.845 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 10:30:47.845 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:30:47.845 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 10:30:47.846 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 10:30:47.996 [main] DEBUG org.example.XML.XML850Parser - Parsing XML to X850Interchange: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:30:48.086 [main] DEBUG org.example.XML.XML850Parser - Successfully parsed XML to X850Interchange
+2025-06-20 10:30:48.086 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 10:30:48.086 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 10:30:48.214 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 10:30:48.218 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:30:48.909 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 10:30:48.909 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 10:37:37.549 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 10:37:38.235 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 10:37:38.268 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:37:40.880 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 10:37:40.880 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:37:40.880 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 10:37:40.880 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 10:37:40.998 [main] DEBUG org.example.XML.XML850Parser - Parsing XML to X850Interchange: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:37:41.074 [main] DEBUG org.example.XML.XML850Parser - Successfully parsed XML to X850Interchange
+2025-06-20 10:37:41.074 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 10:37:41.075 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 10:37:41.104 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to JSON
+2025-06-20 10:37:41.134 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:37:41.135 [main] DEBUG org.example.Main - Parsed interchange JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:37:41.236 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 10:37:41.240 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:37:42.028 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 10:37:42.028 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 10:40:29.806 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 10:40:30.523 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 10:40:30.661 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:40:33.250 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 10:40:33.250 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:40:33.250 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 10:40:33.250 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 10:40:33.402 [main] DEBUG org.example.XML.XML850Parser - Parsing XML to X850Interchange: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:40:33.472 [main] DEBUG org.example.XML.XML850Parser - Successfully parsed XML to X850Interchange
+2025-06-20 10:40:33.472 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 10:40:33.472 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 10:40:33.494 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to JSON
+2025-06-20 10:40:33.519 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:40:33.520 [main] DEBUG org.example.Main - Parsed interchange JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:40:33.520 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to YAML
+2025-06-20 10:40:33.544 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 10:40:33.544 [main] DEBUG org.example.Main - Parsed interchange YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 10:40:33.646 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 10:40:33.651 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:40:34.350 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 10:40:34.350 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 10:41:24.130 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 10:41:24.831 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 10:41:24.870 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:41:27.740 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 10:41:27.740 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:41:27.740 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 10:41:27.740 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 10:41:27.863 [main] DEBUG org.example.XML.XML850Parser - Parsing XML to X850Interchange: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:41:27.943 [main] DEBUG org.example.XML.XML850Parser - Successfully parsed XML to X850Interchange
+2025-06-20 10:41:27.943 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 10:41:27.943 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 10:41:27.980 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to JSON
+2025-06-20 10:41:28.012 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:41:28.013 [main] DEBUG org.example.Main - Parsed interchange JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:41:28.013 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to YAML
+2025-06-20 10:41:28.040 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 10:41:28.040 [main] DEBUG org.example.Main - Parsed interchange YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 10:41:28.164 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 10:41:28.170 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:41:28.939 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 10:41:28.939 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 10:50:49.261 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 10:50:50.014 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 10:50:50.057 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:50:52.808 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 10:50:52.808 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:50:52.808 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 10:50:52.808 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 10:50:52.936 [main] DEBUG org.example.XML.XML850Parser - Parsing XML to X850Interchange: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:50:53.012 [main] DEBUG org.example.XML.XML850Parser - Successfully parsed XML to X850Interchange
+2025-06-20 10:50:53.013 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 10:50:53.013 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 10:50:53.043 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to JSON
+2025-06-20 10:50:53.072 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:50:53.072 [main] DEBUG org.example.Main - Parsed interchange JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:50:53.072 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to YAML
+2025-06-20 10:50:53.096 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 10:50:53.096 [main] DEBUG org.example.Main - Parsed interchange YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 10:50:53.205 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 10:50:53.210 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:50:53.977 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 10:50:53.977 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 10:52:04.593 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 10:52:05.304 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 10:52:05.339 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:52:07.999 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 10:52:07.999 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:52:07.999 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 10:52:07.999 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 10:52:08.118 [main] DEBUG org.example.XML.XML850Parser - Parsing XML to X850Interchange: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:52:08.196 [main] DEBUG org.example.XML.XML850Parser - Successfully parsed XML to X850Interchange
+2025-06-20 10:52:08.196 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 10:52:08.196 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 10:52:08.225 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to JSON
+2025-06-20 10:52:08.256 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:52:08.256 [main] DEBUG org.example.Main - Parsed interchange JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 10:52:08.256 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to YAML
+2025-06-20 10:52:08.280 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 10:52:08.280 [main] DEBUG org.example.Main - Parsed interchange YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 10:52:08.388 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 10:52:08.393 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:52:09.144 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 10:52:09.145 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
+2025-06-20 10:53:22.871 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 10:53:23.639 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 10:53:23.673 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 10:53:26.676 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 10:53:26.676 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:53:26.676 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 10:53:26.678 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 10:53:36.379 [main] DEBUG org.example.XML.XML850Parser - Parsing XML to X850Interchange: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 10:53:36.679 [main] DEBUG org.example.XML.XML850Parser - Successfully parsed XML to X850Interchange
+2025-06-20 12:43:29.682 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 12:43:29.686 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 12:43:29.693 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to JSON
+2025-06-20 14:43:10.989 [main] INFO  org.example.Main - Starting EDI to XML conversion
+2025-06-20 14:43:11.580 [main] DEBUG org.example.Main - Loaded EDI input file with 535 bytes
+2025-06-20 14:43:11.612 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 14:43:14.477 [main] INFO  org.example.Main - Successfully converted EDI to XML
+2025-06-20 14:43:14.477 [main] DEBUG org.example.Main - XML result: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 14:43:14.478 [main] INFO  org.example.Main - Starting XML to EDI conversion
+2025-06-20 14:43:14.478 [main] INFO  org.example.Main - Parsing XML using Jackson FasterXML
+2025-06-20 14:43:14.721 [main] DEBUG org.example.XML.XML850Parser - Parsing XML to X850Interchange: <X850Interchange><interchange-header><auth-qual>01</auth-qual><auth-id>0000000000</auth-id><security-qual>01</security-qual><security-id>0000000000</security-id><sender-qual>ZZ</sender-qual><sender-id>ABCDEFGHIJKLMNO</sender-id><receiver-qual>ZZ</receiver-qual><receiver-id>123456789012345</receiver-id><date>200706</date><time>1015</time><standard>U</standard><version>00401</version><interchange-control-number>000001001</interchange-control-number><ack>0</ack><test>P</test><s-delimiter>^</s-delimiter></interchange-header><group-header><code>PO</code><sender>ABCDEFGHIJKLMNO</sender><receiver>123456789012345</receiver><date>20200706</date><time>1015</time><group-control-number>1001</group-control-number><standard>X</standard><version>004010</version></group-header><transaction-set-header><code>850</code><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-header><party-identifications><party-identifications><entity-ic>BY</entity-ic><name>XYZ CUSTOMER</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>ST</entity-ic><name>XYZ CUSTOMER SHIPTO</name><id-code-qualifier>91</id-code-qualifier><id-code>0001122268292</id-code></party-identifications><party-identifications><entity-ic>SE</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications><party-identifications><entity-ic>N4</entity-ic><name>ELECTRIC</name><id-code-qualifier>91</id-code-qualifier><id-code>1234</id-code></party-identifications></party-identifications><items><items><baseline_item_data><assigned_identification>1</assigned_identification><quantity>3</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>MONITOR</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-01</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items><items><baseline_item_data><assigned_identification>2</assigned_identification><quantity>200</quantity></baseline_item_data><item_description><item_description_type>F</item_description_type><description>TV</description></item_description><reference-information><id_qualifier>GX</id_qualifier><reference_id>1234-02</reference_id></reference-information><reference-information><id_qualifier>WS</id_qualifier><reference_id>LOC1</reference_id></reference-information><reference-information><id_qualifier>BO</id_qualifier><reference_id>LOC2-LOC3-LOC4</reference_id></reference-information></items></items><transaction-totals><number-of-line-items>2</number-of-line-items></transaction-totals><transaction-set-trailer><number-of-included-segments>17</number-of-included-segments><transaction-set-control-number>0001</transaction-set-control-number></transaction-set-trailer><functional-group-trailer><number-of-transaction-sets>1</number-of-transaction-sets><group-control-number>1001</group-control-number></functional-group-trailer><interchange-control-trailer><number-of-function-groups-included>1</number-of-function-groups-included><interchange-control-number>000001001</interchange-control-number></interchange-control-trailer></X850Interchange>
+2025-06-20 14:43:14.898 [main] DEBUG org.example.XML.XML850Parser - Successfully parsed XML to X850Interchange
+2025-06-20 14:43:14.899 [main] INFO  org.example.Main - Successfully parsed XML using Jackson FasterXML
+2025-06-20 14:43:14.899 [main] DEBUG org.example.Main - Parsed interchange: X850Interchange(interchangeHeader=X850Interchange.InterchangeHeader(authQual=01, authId=0000000000, securityQual=01, securityId=0000000000, senderQual=ZZ, senderId=ABCDEFGHIJKLMNO, receiverQual=ZZ, receiverId=123456789012345, date=200706, time=1015, standard=U, version=00401, interchangeControlNumber=000001001, ack=0, test=P, sDelimiter=^), groupHeader=X850Interchange.GroupHeader(code=PO, sender=ABCDEFGHIJKLMNO, receiver=123456789012345, date=20200706, time=1015, groupControlNumber=1001, standard=X, version=004010), transactionSetHeader=X850Interchange.TransactionSetHeader(code=850, transactionSetControlNumber=0001), partyIdentifications=X850Interchange.PartyIdentifications(partyIdentificationList=[X850Interchange.PartyIdentification(entityIc=BY, name=XYZ CUSTOMER, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=ST, name=XYZ CUSTOMER SHIPTO, idCodeQualifier=91, idCode=0001122268292), X850Interchange.PartyIdentification(entityIc=SE, name=ELECTRIC, idCodeQualifier=91, idCode=1234), X850Interchange.PartyIdentification(entityIc=N4, name=ELECTRIC, idCodeQualifier=91, idCode=1234)]), items=X850Interchange.Items(itemList=[X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=1, quantity=3), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=MONITOR), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-01), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)]), X850Interchange.Item(baselineItemData=X850Interchange.BaselineItemData(assignedIdentification=2, quantity=200), itemDescription=X850Interchange.ItemDescription(itemDescriptionType=F, description=TV), referenceInformation=[X850Interchange.ReferenceInformation(idQualifier=GX, referenceId=1234-02), X850Interchange.ReferenceInformation(idQualifier=WS, referenceId=LOC1), X850Interchange.ReferenceInformation(idQualifier=BO, referenceId=LOC2-LOC3-LOC4)])]), transactionTotals=X850Interchange.TransactionTotals(numberOfLineItems=2), transactionSetTrailer=X850Interchange.TransactionSetTrailer(numberOfIncludedSegments=17, transactionSetControlNumber=0001), functionalGroupTrailer=X850Interchange.FunctionalGroupTrailer(numberOfTransactionSets=1, groupControlNumber=1001), interchangeControlTrailer=X850Interchange.InterchangeControlTrailer(numberOfFunctionGroupsIncluded=1, interchangeControlNumber=000001001))
+2025-06-20 14:43:14.918 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to JSON
+2025-06-20 14:43:14.941 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 14:43:14.941 [main] DEBUG org.example.Main - Parsed interchange JSON: {"interchange-header":{"auth-qual":"01","auth-id":"0000000000","security-qual":"01","security-id":"0000000000","sender-qual":"ZZ","sender-id":"ABCDEFGHIJKLMNO","receiver-qual":"ZZ","receiver-id":"123456789012345","date":"200706","time":"1015","standard":"U","version":"00401","interchange-control-number":"000001001","ack":"0","test":"P","s-delimiter":"^"},"group-header":{"code":"PO","sender":"ABCDEFGHIJKLMNO","receiver":"123456789012345","date":"20200706","time":"1015","group-control-number":"1001","standard":"X","version":"004010"},"transaction-set-header":{"code":"850","transaction-set-control-number":"0001"},"party-identifications":{"party-identifications":[{"entity-ic":"BY","name":"XYZ CUSTOMER","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"ST","name":"XYZ CUSTOMER SHIPTO","id-code-qualifier":"91","id-code":"0001122268292"},{"entity-ic":"SE","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"},{"entity-ic":"N4","name":"ELECTRIC","id-code-qualifier":"91","id-code":"1234"}]},"items":{"items":[{"baseline_item_data":{"assigned_identification":"1","quantity":"3"},"item_description":{"item_description_type":"F","description":"MONITOR"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-01"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]},{"baseline_item_data":{"assigned_identification":"2","quantity":"200"},"item_description":{"item_description_type":"F","description":"TV"},"reference-information":[{"id_qualifier":"GX","reference_id":"1234-02"},{"id_qualifier":"WS","reference_id":"LOC1"},{"id_qualifier":"BO","reference_id":"LOC2-LOC3-LOC4"}]}]},"transaction-totals":{"number-of-line-items":"2"},"transaction-set-trailer":{"number-of-included-segments":"17","transaction-set-control-number":"0001"},"functional-group-trailer":{"number-of-transaction-sets":"1","group-control-number":"1001"},"interchange-control-trailer":{"number-of-function-groups-included":"1","interchange-control-number":"000001001"}}
+2025-06-20 14:43:14.941 [main] DEBUG org.example.XML.XML850Parser - Converting X850Interchange to YAML
+2025-06-20 14:43:14.967 [main] DEBUG org.example.XML.XML850Parser - Successfully converted X850Interchange to YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 14:43:14.967 [main] DEBUG org.example.Main - Parsed interchange YAML: ---
+interchange-header:
+  auth-qual: "01"
+  auth-id: "0000000000"
+  security-qual: "01"
+  security-id: "0000000000"
+  sender-qual: "ZZ"
+  sender-id: "ABCDEFGHIJKLMNO"
+  receiver-qual: "ZZ"
+  receiver-id: "123456789012345"
+  date: "200706"
+  time: "1015"
+  standard: "U"
+  version: "00401"
+  interchange-control-number: "000001001"
+  ack: "0"
+  test: "P"
+  s-delimiter: "^"
+group-header:
+  code: "PO"
+  sender: "ABCDEFGHIJKLMNO"
+  receiver: "123456789012345"
+  date: "20200706"
+  time: "1015"
+  group-control-number: "1001"
+  standard: "X"
+  version: "004010"
+transaction-set-header:
+  code: "850"
+  transaction-set-control-number: "0001"
+party-identifications:
+  party-identifications:
+  - entity-ic: "BY"
+    name: "XYZ CUSTOMER"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "ST"
+    name: "XYZ CUSTOMER SHIPTO"
+    id-code-qualifier: "91"
+    id-code: "0001122268292"
+  - entity-ic: "SE"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+  - entity-ic: "N4"
+    name: "ELECTRIC"
+    id-code-qualifier: "91"
+    id-code: "1234"
+items:
+  items:
+  - baseline_item_data:
+      assigned_identification: "1"
+      quantity: "3"
+    item_description:
+      item_description_type: "F"
+      description: "MONITOR"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-01"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+  - baseline_item_data:
+      assigned_identification: "2"
+      quantity: "200"
+    item_description:
+      item_description_type: "F"
+      description: "TV"
+    reference-information:
+    - id_qualifier: "GX"
+      reference_id: "1234-02"
+    - id_qualifier: "WS"
+      reference_id: "LOC1"
+    - id_qualifier: "BO"
+      reference_id: "LOC2-LOC3-LOC4"
+transaction-totals:
+  number-of-line-items: "2"
+transaction-set-trailer:
+  number-of-included-segments: "17"
+  transaction-set-control-number: "0001"
+functional-group-trailer:
+  number-of-transaction-sets: "1"
+  group-control-number: "1001"
+interchange-control-trailer:
+  number-of-function-groups-included: "1"
+  interchange-control-number: "000001001"
+
+2025-06-20 14:43:15.066 [main] DEBUG org.example.Main - Prepared XML input with 3461 bytes
+2025-06-20 14:43:15.071 [main] INFO  o.s.c.dfdl.DataProcessorFactory - Cache miss for key file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd:Full:false:false. Compiling and caching DFDL schema file:/D:/personal/LearnSmooks2/AgileIOSmooksExample/Parse850FromArticle/target/classes/mapping.dfdl.xsd...
+2025-06-20 14:43:15.775 [main] INFO  org.example.Main - Successfully converted XML back to EDI
+2025-06-20 14:43:15.776 [main] DEBUG org.example.Main - EDI result: ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*200706*1015*U*00401*000001001*0*P*^~GS*PO*ABCDEFGHIJKLMNO*123456789012345*20200706*1015*1001*X*004010~ST*850*0001~N1*BY*XYZ CUSTOMER*91*0001122268292~N1*ST*XYZ CUSTOMER SHIPTO*91*0001122268292~N1*SE*ELECTRIC*91*1234~N1*N4*ELECTRIC*91*1234~PO1*1*3~PID*F*MONITOR~REF*GX*1234-01~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~PO1*2*200~PID*F*TV~REF*GX*1234-02~REF*WS*LOC1~REF*BO*LOC2-LOC3-LOC4~CTT*2~SE*17*0001~GE*1*1001~IEA*1*000001001~
