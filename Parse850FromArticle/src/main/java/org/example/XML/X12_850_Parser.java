@@ -14,7 +14,10 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
- * Utility class for parsing XML using Jackson's XML mapper.
+ * The X12_850_Parser class provides methods for parsing, converting, and
+ * serializing EDI (Electronic Data Interchange) formats, particularly focusing
+ * on the X12 850 Purchase Order transactions. It leverages XML, JSON, and YAML
+ * mappers for format transformations.
  */
 @Slf4j
 public class X12_850_Parser {
@@ -29,10 +32,26 @@ public class X12_850_Parser {
     }
 
 
+    /**
+     * Parses the given X12 850 EDI string and returns its XML representation.
+     *
+     * @param ediString The input EDI string to be parsed into XML format.
+     * @return A string containing the XML representation of the provided EDI input.
+     * @throws IOException If an I/O error occurs during the parsing process.
+     * @throws SAXException If an error occurs while parsing the EDI input.
+     */
     public static String parseX12850EDIString(String ediString) throws IOException, SAXException {
         return parseEDI(ediString.getBytes());
     }
 
+    /**
+     * Converts the given EDI data in byte array format into an XML string representation.
+     *
+     * @param ediInput The input EDI data as a byte array that needs to be converted to XML.
+     * @return A string containing the XML representation of the given EDI data.
+     * @throws IOException If an I/O error occurs during the conversion process.
+     * @throws SAXException If an error occurs while parsing the EDI input.
+     */
     public static String parseEDI(byte[] ediInput) throws IOException, SAXException {
         Smooks ediToXml = new Smooks("parse-config.xml");
         log.debug("Loaded EDI input file with {} bytes", ediInput.length);
@@ -104,6 +123,13 @@ public class X12_850_Parser {
         }
     }
 
+    /**
+     * Converts a given X850Interchange object to its YAML string representation.
+     *
+     * @param interchange The X850Interchange object to convert into YAML format.
+     * @return A string representing the YAML serialization of the given X850Interchange object.
+     * @throws IOException If an error occurs during the YAML conversion process.
+     */
     public static String toYaml(X850Interchange interchange) throws IOException {
         String result = null;
         try {
