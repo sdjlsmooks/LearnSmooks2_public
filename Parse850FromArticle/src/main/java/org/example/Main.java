@@ -42,23 +42,16 @@ public class Main {
             log.debug("Parsed interchange JSON: {}", X12_850_Parser.toJson(interchange));
             log.debug("Parsed interchange YAML: {}", X12_850_Parser.toYaml(interchange));
 
-            // Convert XML -> EDI
-            Smooks xmlToEdi = new Smooks("serialize-config.xml");
-
-            xmlToEdi.setFilterSettings(FilterSettings.newSaxNgSettings().setDefaultSerializationOn(false));
-            final byte[] xmlInput = xmlResult.getBytes();
-            log.debug("Prepared XML input with {} bytes", xmlInput.length);
-
-            StringSink ediResult = new StringSink();
-            xmlToEdi.filterSource(new StreamSource(new ByteArrayInputStream(xmlInput)), ediResult);
-            log.info("Successfully converted XML back to EDI");
-            log.debug("EDI result: {}", ediResult.getResult());
-            System.out.printf("Converted to EDI:%s %n", ediResult.getResult());
+            // Convert back to EDI String.
+            String ediResult = X12_850_Parser.toEDI(xmlResult);
+            System.out.printf("Converted to EDI:%s %n", ediResult);
         } catch (Exception e) {
             log.error("Error parsing XML using Jackson FasterXML: {}", e.getMessage(), e);
         }
 
     }
+
+
 
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text

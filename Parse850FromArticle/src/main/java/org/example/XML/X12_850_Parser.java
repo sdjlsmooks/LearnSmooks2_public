@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.smooks.FilterSettings;
 import org.smooks.Smooks;
 import org.smooks.io.sink.StringSink;
 import org.smooks.io.source.StreamSource;
@@ -141,5 +142,20 @@ public class X12_850_Parser {
             log.error("Error converting X850Interchange to YAML: {}", e.getMessage(), e);
         }
         return result;
+    }
+
+    public static String toEDI(String xmlResult) throws IOException, SAXException {
+        // Convert XML -> EDI
+        Smooks xmlToEdi = new Smooks("serialize-config.xml");
+
+        xmlToEdi.setFilterSettings(FilterSettings.newSaxNgSettings().setDefaultSerializationOn(false));
+        final byte[] xmlInput = xmlResult.getBytes();
+        log.debug("Prepared XML input with {} bytes", xmlInput.length);
+
+        StringSink ediResult = new StringSink();
+        xmlToEdi.filterSource(new StreamSource(new ByteArrayInputStream(xmlInput)), ediResult);
+        log.info("Successfully converted XML back to EDI");
+        log.debug("EDI result: {}", ediResult.getResult());
+        return ediResult.toString();
     }
 }
