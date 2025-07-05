@@ -5,7 +5,12 @@ import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.smooks.Smooks;
+import org.smooks.io.sink.StringSink;
+import org.smooks.io.source.StreamSource;
+import org.xml.sax.SAXException;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
@@ -21,6 +26,24 @@ public class XML850Parser {
     static {
         // Configure the XML mapper
         xmlMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    }
+
+
+    public static String parseX12850EDIString(String ediString) throws IOException, SAXException {
+        return parseEDI(ediString.getBytes());
+    }
+
+    public static String parseEDI(byte[] ediInput) throws IOException, SAXException {
+        Smooks ediToXml = new Smooks("parse-config.xml");
+        log.debug("Loaded EDI input file with {} bytes", ediInput.length);
+
+        StringSink result = new StringSink();
+        ediToXml.filterSource(new StreamSource(new ByteArrayInputStream(ediInput)), result);
+        String xmlResult = result.getResult();
+        log.info("Successfully converted EDI to XML");
+        log.debug("XML result: {}", xmlResult);
+        System.out.printf("Converted to XML:%s %n", xmlResult);
+        return xmlResult;
     }
 
     /**
