@@ -1,7 +1,7 @@
 package org.example;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.XML.XML850Parser;
+import org.example.XML.X12_850_Parser;
 import org.example.XML.X850Interchange;
 import org.junit.Test;
 import org.smooks.FilterSettings;
@@ -29,8 +29,8 @@ public class Main {
             String ediString = Files.readString(Paths.get(Main.class.getClassLoader().getResource("inputmessage.edi").toURI()));
 
             // Convert EDI -> XML
-            String xmlResult = XML850Parser.parseEDI(ediInput);
-            X850Interchange interchange = XML850Parser.parseX850(xmlResult);
+            String xmlResult = X12_850_Parser.parseEDI(ediInput);
+            X850Interchange interchange = X12_850_Parser.parseX850(xmlResult);
 
             log.info("Starting XML to EDI conversion");
             // Parse XML using Jackson FasterXML
@@ -39,8 +39,8 @@ public class Main {
             // 7/1/25 - Expand parser - convert to JSON then YAML.
             log.info("Successfully parsed XML using Jackson FasterXML");
             log.debug("Parsed interchange: {}", interchange);
-            log.debug("Parsed interchange JSON: {}", XML850Parser.toJson(interchange));
-            log.debug("Parsed interchange YAML: {}", XML850Parser.toYaml(interchange));
+            log.debug("Parsed interchange JSON: {}", X12_850_Parser.toJson(interchange));
+            log.debug("Parsed interchange YAML: {}", X12_850_Parser.toYaml(interchange));
 
             // Convert XML -> EDI
             Smooks xmlToEdi = new Smooks("serialize-config.xml");

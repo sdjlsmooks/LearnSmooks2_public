@@ -17,7 +17,7 @@ import java.io.IOException;
  * Utility class for parsing XML using Jackson's XML mapper.
  */
 @Slf4j
-public class XML850Parser {
+public class X12_850_Parser {
 
     private static final XmlMapper xmlMapper = new XmlMapper();
     private static final JsonMapper jsonMapper = new JsonMapper();
