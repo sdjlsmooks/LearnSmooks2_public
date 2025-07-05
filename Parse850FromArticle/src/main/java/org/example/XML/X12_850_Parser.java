@@ -144,6 +144,14 @@ public class X12_850_Parser {
         return result;
     }
 
+    /**
+     * Converts the given XML string into its EDI representation.
+     *
+     * @param xmlResult The input XML string to be converted into EDI format.
+     * @return A string containing the EDI representation of the provided XML input.
+     * @throws IOException If an I/O error occurs during the conversion process.
+     * @throws SAXException If an error occurs while parsing the XML input.
+     */
     public static String toEDI(String xmlResult) throws IOException, SAXException {
         // Convert XML -> EDI
         Smooks xmlToEdi = new Smooks("serialize-config.xml");
@@ -158,4 +166,5 @@ public class X12_850_Parser {
         log.debug("EDI result: {}", ediResult.getResult());
         return ediResult.toString();
     }
+    
 }
