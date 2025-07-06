@@ -73,7 +73,7 @@ public class X12_850_Parser {
      * @return The parsed X850Interchange object
      * @throws IOException If parsing fails
      */
-    public static X850Interchange parseX850(String xml) throws IOException {
+    public static X850Interchange parseXML(String xml) throws IOException {
         try {
             log.debug("Parsing XML to X850Interchange: {}", xml);
             X850Interchange result = xmlMapper.readValue(xml, X850Interchange.class);
@@ -166,5 +166,17 @@ public class X12_850_Parser {
         log.debug("EDI result: {}", ediResult.getResult());
         return ediResult.toString();
     }
-    
+
+    /**
+     * Converts the given {@link X850Interchange} object into its EDI string representation.
+     *
+     * @param interchange The X850Interchange object to be converted into an EDI string.
+     * @return A string containing the EDI representation of the provided X850Interchange object.
+     * @throws IOException If an I/O error occurs during the conversion process.
+     * @throws SAXException If an error occurs while parsing the intermediate XML representation.
+     */
+    public static String toEDI(X850Interchange interchange) throws IOException, SAXException {
+        return toEDI(toXml(interchange));
+    }
+
 }

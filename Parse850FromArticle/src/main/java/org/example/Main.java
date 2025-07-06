@@ -30,7 +30,7 @@ public class Main {
 
             // Convert EDI -> XML
             String xmlResult = X12_850_Parser.parseEDI(ediInput);
-            X850Interchange interchange = X12_850_Parser.parseX850(xmlResult);
+            X850Interchange interchange = X12_850_Parser.parseXML(xmlResult);
 
             log.info("Starting XML to EDI conversion");
             // Parse XML using Jackson FasterXML
@@ -38,13 +38,17 @@ public class Main {
 
             // 7/1/25 - Expand parser - convert to JSON then YAML.
             log.info("Successfully parsed XML using Jackson FasterXML");
-            log.debug("Parsed interchange: {}", interchange);
-            log.debug("Parsed interchange JSON: {}", X12_850_Parser.toJson(interchange));
-            log.debug("Parsed interchange YAML: {}", X12_850_Parser.toYaml(interchange));
+            log.info("Parsed interchange XML: {}",interchange.toString());
+            String xmlString = X12_850_Parser.toXml(interchange);
+            log.info("Parsed interchange JSON: {}", X12_850_Parser.toJson(interchange));
+            log.info("Parsed interchange YAML: {}", X12_850_Parser.toYaml(interchange));
 
             // Convert back to EDI String.
             String ediResult = X12_850_Parser.toEDI(xmlResult);
             System.out.printf("Converted to EDI:%s %n", ediResult);
+
+            String ediResultString = X12_850_Parser.toEDI(interchange);
+            System.out.printf("Converted to EDI:%s %n", ediResultString);
         } catch (Exception e) {
             log.error("Error parsing XML using Jackson FasterXML: {}", e.getMessage(), e);
         }
