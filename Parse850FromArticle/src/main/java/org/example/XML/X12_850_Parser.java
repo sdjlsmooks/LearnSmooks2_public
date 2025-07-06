@@ -23,8 +23,29 @@ import java.io.IOException;
 @Slf4j
 public class X12_850_Parser {
 
+    /**
+     * A static instance of the {@code XmlMapper} used for XML serialization and deserialization
+     * throughout the application. This mapper facilitates conversion between Java objects
+     * and their XML representations, enabling seamless processing of XML data.
+     */
     private static final XmlMapper xmlMapper = new XmlMapper();
+
+    /**
+     * A static instance of the {@code JsonMapper} class used for handling JSON
+     * serialization and deserialization operations. This mapper serves as a
+     * utility within the enclosing class to convert or process JSON data
+     * efficiently and consistently across various methods.
+     */
     private static final JsonMapper jsonMapper = new JsonMapper();
+
+
+    /**
+     * A static instance of the YAMLMapper class used for handling YAML serialization
+     * and deserialization operations. This mapper is specifically configured to process
+     * YAML data structures, allowing for conversion between Java objects and YAML representations.
+     * It is utilized in various methods of the X12_850_Parser class to convert
+     * X850Interchange objects to and from YAML format.
+     */
     private static final YAMLMapper yamlMapper = new YAMLMapper();
 
     static {
@@ -41,7 +62,7 @@ public class X12_850_Parser {
      * @throws IOException If an I/O error occurs during the parsing process.
      * @throws SAXException If an error occurs while parsing the EDI input.
      */
-    public static String parseX12850EDIString(String ediString) throws IOException, SAXException {
+    public static String parseEDI(String ediString) throws IOException, SAXException {
         return parseEDI(ediString.getBytes());
     }
 
@@ -73,10 +94,10 @@ public class X12_850_Parser {
      * @return The parsed X850Interchange object
      * @throws IOException If parsing fails
      */
-    public static X850Interchange parseXML(String xml) throws IOException {
+    public static X12_850_Interchange parseXML(String xml) throws IOException {
         try {
             log.debug("Parsing XML to X850Interchange: {}", xml);
-            X850Interchange result = xmlMapper.readValue(xml, X850Interchange.class);
+            X12_850_Interchange result = xmlMapper.readValue(xml, X12_850_Interchange.class);
             log.debug("Successfully parsed XML to X850Interchange");
             return result;
         } catch (Exception e) {
@@ -92,7 +113,7 @@ public class X12_850_Parser {
      * @return The XML string representation
      * @throws IOException If conversion fails
      */
-    public static String toXml(X850Interchange interchange) throws IOException {
+    public static String toXml(X12_850_Interchange interchange) throws IOException {
         try {
             log.debug("Converting X850Interchange to XML");
             String result = xmlMapper.writeValueAsString(interchange);
@@ -112,7 +133,7 @@ public class X12_850_Parser {
      * @return The XML string representation
      * @throws IOException If conversion fails
      */
-    public static String toJson(X850Interchange interchange) throws IOException {
+    public static String toJson(X12_850_Interchange interchange) throws IOException {
         try {
             log.debug("Converting X850Interchange to JSON");
             String result = jsonMapper.writeValueAsString(interchange);
@@ -131,7 +152,7 @@ public class X12_850_Parser {
      * @return A string representing the YAML serialization of the given X850Interchange object.
      * @throws IOException If an error occurs during the YAML conversion process.
      */
-    public static String toYaml(X850Interchange interchange) throws IOException {
+    public static String toYaml(X12_850_Interchange interchange) throws IOException {
         String result = null;
         try {
             log.debug("Converting X850Interchange to YAML");
@@ -168,14 +189,14 @@ public class X12_850_Parser {
     }
 
     /**
-     * Converts the given {@link X850Interchange} object into its EDI string representation.
+     * Converts the given {@link X12_850_Interchange} object into its EDI string representation.
      *
      * @param interchange The X850Interchange object to be converted into an EDI string.
      * @return A string containing the EDI representation of the provided X850Interchange object.
      * @throws IOException If an I/O error occurs during the conversion process.
      * @throws SAXException If an error occurs while parsing the intermediate XML representation.
      */
-    public static String toEDI(X850Interchange interchange) throws IOException, SAXException {
+    public static String toEDI(X12_850_Interchange interchange) throws IOException, SAXException {
         return toEDI(toXml(interchange));
     }
 

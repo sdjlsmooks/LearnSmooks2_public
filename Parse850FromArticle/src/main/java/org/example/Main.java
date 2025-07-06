@@ -2,16 +2,9 @@ package org.example;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.XML.X12_850_Parser;
-import org.example.XML.X850Interchange;
+import org.example.XML.X12_850_Interchange;
 import org.junit.Test;
-import org.smooks.FilterSettings;
-import org.smooks.Smooks;
-import org.smooks.io.sink.StringSink;
-import org.smooks.io.source.StreamSource;
-import org.xml.sax.SAXException;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -30,7 +23,7 @@ public class Main {
 
             // Convert EDI -> XML
             String xmlResult = X12_850_Parser.parseEDI(ediInput);
-            X850Interchange interchange = X12_850_Parser.parseXML(xmlResult);
+            X12_850_Interchange interchange = X12_850_Parser.parseXML(xmlResult);
 
             log.info("Starting XML to EDI conversion");
             // Parse XML using Jackson FasterXML
@@ -40,6 +33,7 @@ public class Main {
             log.info("Successfully parsed XML using Jackson FasterXML");
             log.info("Parsed interchange XML: {}",interchange.toString());
             String xmlString = X12_850_Parser.toXml(interchange);
+            log.info("Parsed interchange XML FROM INTERCHANGE: {}", xmlString);
             log.info("Parsed interchange JSON: {}", X12_850_Parser.toJson(interchange));
             log.info("Parsed interchange YAML: {}", X12_850_Parser.toYaml(interchange));
 
