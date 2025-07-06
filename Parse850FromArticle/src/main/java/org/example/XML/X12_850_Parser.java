@@ -43,7 +43,7 @@ public class X12_850_Parser {
      * A static instance of the YAMLMapper class used for handling YAML serialization
      * and deserialization operations. This mapper is specifically configured to process
      * YAML data structures, allowing for conversion between Java objects and YAML representations.
-     * It is utilized in various methods of the X12_850_Parser class to convert
+     * It is used in various methods of the X12_850_Parser class to convert
      * X850Interchange objects to and from YAML format.
      */
     private static final YAMLMapper yamlMapper = new YAMLMapper();
@@ -75,11 +75,13 @@ public class X12_850_Parser {
      * @throws SAXException If an error occurs while parsing the EDI input.
      */
     public static String parseEDI(byte[] ediInput) throws IOException, SAXException {
-        Smooks ediToXml = new Smooks("parse-config.xml");
-        log.debug("Loaded EDI input file with {} bytes", ediInput.length);
+        StringSink result;
+        try (Smooks ediToXml = new Smooks("parse-config.xml")) {
+            log.debug("Loaded EDI input file with {} bytes", ediInput.length);
 
-        StringSink result = new StringSink();
-        ediToXml.filterSource(new StreamSource(new ByteArrayInputStream(ediInput)), result);
+            result = new StringSink();
+            ediToXml.filterSource(new StreamSource<>(new ByteArrayInputStream(ediInput)), result);
+        }
         String xmlResult = result.getResult();
         log.info("Successfully converted EDI to XML");
         log.debug("XML result: {}", xmlResult);
@@ -173,16 +175,18 @@ public class X12_850_Parser {
      * @throws IOException If an I/O error occurs during the conversion process.
      * @throws SAXException If an error occurs while parsing the XML input.
      */
-    public static String toEDI(String xmlResult) throws IOException, SAXException {
+    public static String xmlToEDI(String xmlResult) throws IOException, SAXException {
         // Convert XML -> EDI
-        Smooks xmlToEdi = new Smooks("serialize-config.xml");
+        StringSink ediResult;
+        try (Smooks xmlToEdi = new Smooks("serialize-config.xml")) {
 
-        xmlToEdi.setFilterSettings(FilterSettings.newSaxNgSettings().setDefaultSerializationOn(false));
-        final byte[] xmlInput = xmlResult.getBytes();
-        log.debug("Prepared XML input with {} bytes", xmlInput.length);
+            xmlToEdi.setFilterSettings(FilterSettings.newSaxNgSettings().setDefaultSerializationOn(false));
+            final byte[] xmlInput = xmlResult.getBytes();
+            log.debug("Prepared XML input with {} bytes", xmlInput.length);
 
-        StringSink ediResult = new StringSink();
-        xmlToEdi.filterSource(new StreamSource(new ByteArrayInputStream(xmlInput)), ediResult);
+            ediResult = new StringSink();
+            xmlToEdi.filterSource(new StreamSource<>(new ByteArrayInputStream(xmlInput)), ediResult);
+        }
         log.info("Successfully converted XML back to EDI");
         log.debug("EDI result: {}", ediResult.getResult());
         return ediResult.toString();
@@ -196,8 +200,8 @@ public class X12_850_Parser {
      * @throws IOException If an I/O error occurs during the conversion process.
      * @throws SAXException If an error occurs while parsing the intermediate XML representation.
      */
-    public static String toEDI(X12_850_Interchange interchange) throws IOException, SAXException {
-        return toEDI(toXml(interchange));
+    public static String xmlToEDI(X12_850_Interchange interchange) throws IOException, SAXException {
+        return xmlToEDI(toXml(interchange));
     }
 
 }

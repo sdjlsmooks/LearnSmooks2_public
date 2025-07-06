@@ -38,10 +38,10 @@ public class Main {
             log.info("Parsed interchange YAML: {}", X12_850_Parser.toYaml(interchange));
 
             // Convert back to EDI String.
-            String ediResult = X12_850_Parser.toEDI(xmlResult);
+            String ediResult = X12_850_Parser.xmlToEDI(xmlResult);
             System.out.printf("Converted to EDI:%s %n", ediResult);
 
-            String ediResultString = X12_850_Parser.toEDI(interchange);
+            String ediResultString = X12_850_Parser.xmlToEDI(interchange);
             System.out.printf("Converted to EDI:%s %n", ediResultString);
         } catch (Exception e) {
             log.error("Error parsing XML using Jackson FasterXML: {}", e.getMessage(), e);
