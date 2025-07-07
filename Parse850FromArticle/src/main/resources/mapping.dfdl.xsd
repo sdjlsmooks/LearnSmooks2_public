@@ -13,7 +13,7 @@
         </xsd:appinfo>
     </xsd:annotation>
 
-    <xsd:element ibmSchExtn:docRoot="true" name="X850Interchange">
+    <xsd:element ibmSchExtn:docRoot="true" name="X12_850_Interchange">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:sequence dfdl:initiatedContent="yes">

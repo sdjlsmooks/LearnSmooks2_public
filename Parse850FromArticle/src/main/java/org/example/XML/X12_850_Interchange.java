@@ -8,12 +8,12 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * Represents an X850 interchange structure, which encapsulates various
+ * Represents an X12 850 interchange structure, which encapsulates various
  * hierarchical components such as headers, parties, items, and trailers
  * for electronic data interchange (EDI) messages.
  *
  * The primary purpose of this class is to model the data elements and
- * relationships required for the X850 document type, adhering to a
+ * relationships required for the X12 850 document type, adhering to a
  * specific standard format for business transactions.
  *
  * This class includes nested static classes that represent various functional
@@ -55,7 +55,7 @@ import java.util.List;
  * and deserialization.
  */
 @Data
-@JsonRootName("X850Interchange")
+@JsonRootName("X12_850_Interchange")
 public class X12_850_Interchange {
 
     /**
@@ -82,19 +82,19 @@ public class X12_850_Interchange {
     private GroupHeader groupHeader;
 
     /**
-     * Represents the transaction set header within the X850Interchange object.
+     * Represents the transaction set header within the X12_850_Interchange object.
      * This field contains metadata about the specific transaction set, including
      * its code and a control number to uniquely identify the transaction set.
      *
      * Annotated with `@JsonProperty("transaction-set-header")`, this field is
      * mapped to the "transaction-set-header" key in the JSON or XML representation
-     * of the X850Interchange during serialization and deserialization processes.
+     * of the X12_850_Interchange during serialization and deserialization processes.
      */
     @JsonProperty("transaction-set-header")
     private TransactionSetHeader transactionSetHeader;
 
     /**
-     * Represents the party identifications section of the X850Interchange object.
+     * Represents the party identifications section of the X12_850_Interchange object.
      * This field holds information about one or more parties involved in the interchange.
      * It is a structured representation of party details, using the {@link PartyIdentifications}
      * class to encapsulate a list of party identification data.
@@ -103,7 +103,7 @@ public class X12_850_Interchange {
     private PartyIdentifications partyIdentifications;
 
     /**
-     * Represents the collection of items within an X850Interchange.
+     * Represents the collection of items within an X12_850_Interchange.
      * Each item in the collection corresponds to an instance of the {@code Item} class.
      * The items are deserialized from a JSON property named "items"
      * and are typically used to encapsulate details of individual items
@@ -122,7 +122,7 @@ public class X12_850_Interchange {
     private Items items;
 
     /**
-     * Represents the transaction totals for the X850Interchange, providing details
+     * Represents the transaction totals for the X12_850_Interchange, providing details
      * about aggregate transaction data within an interchange. This field is intended
      * to store relevant totals, such as the number of line items in the transaction set.
      *
@@ -140,7 +140,7 @@ public class X12_850_Interchange {
      * included segments and the transaction set control number.
      *
      * The `TransactionSetTrailer` class is a static nested class
-     * within `X850Interchange` and is serialized/deserialized
+     * within `X12_850_Interchange` and is serialized/deserialized
      * using the `@JsonProperty` annotation.
      */
     @JsonProperty("transaction-set-trailer")
@@ -148,7 +148,7 @@ public class X12_850_Interchange {
 
     /**
      * Represents the functional group trailer section of an EDI (Electronic Data Interchange)
-     * structure within the {@code X850Interchange} class. The functional group trailer contains
+     * structure within the {@code X12_850_Interchange} class. The functional group trailer contains
      * control information specific to a group of transaction sets and helps ensure that the data
      * within the group is processed correctly and completely.
      *
@@ -163,7 +163,7 @@ public class X12_850_Interchange {
      * transaction in the X12 850 standard. This segment contains metadata about the interchange,
      * including the number of function groups included and the interchange control number.
      *
-     * It is a part of the {@code X850Interchange} class and is serialized using JSON with
+     * It is a part of the {@code X12_850_Interchange} class and is serialized using JSON with
      * a custom property name "interchange-control-trailer".
      *
      * The {@code InterchangeControlTrailer} class contains fields for:

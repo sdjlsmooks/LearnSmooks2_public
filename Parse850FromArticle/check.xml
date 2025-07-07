@@ -1,4 +1,4 @@
-<X850Interchange>
+<X12_850_Interchange>
     <interchange-header>
         <auth-qual>01</auth-qual>
         <auth-id>0000000000</auth-id>
@@ -118,4 +118,4 @@
         <number-of-function-groups-included>1</number-of-function-groups-included>
         <interchange-control-number>000001001</interchange-control-number>
     </interchange-control-trailer>
-</X850Interchange>
+</X12_850_Interchange>

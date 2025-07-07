@@ -44,7 +44,7 @@ public class X12_850_Parser {
      * and deserialization operations. This mapper is specifically configured to process
      * YAML data structures, allowing for conversion between Java objects and YAML representations.
      * It is used in various methods of the X12_850_Parser class to convert
-     * X850Interchange objects to and from YAML format.
+     * X12_850_Interchange objects to and from YAML format.
      */
     private static final YAMLMapper yamlMapper = new YAMLMapper();
 
@@ -90,79 +90,79 @@ public class X12_850_Parser {
     }
 
     /**
-     * Parse XML string into X850Interchange object.
+     * Parse XML string into X12_850_Interchange object.
      *
      * @param xml The XML string to parse
-     * @return The parsed X850Interchange object
+     * @return The parsed X12_850_Interchange object
      * @throws IOException If parsing fails
      */
     public static X12_850_Interchange parseXML(String xml) throws IOException {
         try {
-            log.debug("Parsing XML to X850Interchange: {}", xml);
+            log.debug("Parsing XML to X12_850_Interchange: {}", xml);
             X12_850_Interchange result = xmlMapper.readValue(xml, X12_850_Interchange.class);
-            log.debug("Successfully parsed XML to X850Interchange");
+            log.debug("Successfully parsed XML to X12_850_Interchange");
             return result;
         } catch (Exception e) {
-            log.error("Error parsing XML to X850Interchange: {}", e.getMessage(), e);
+            log.error("Error parsing XML to X12_850_Interchange: {}", e.getMessage(), e);
             throw e;
         }
     }
 
     /**
-     * Convert X850Interchange object to XML string.
+     * Convert X12_850_Interchange object to XML string.
      *
-     * @param interchange The X850Interchange object to convert
+     * @param interchange The X12_850_Interchange object to convert
      * @return The XML string representation
      * @throws IOException If conversion fails
      */
     public static String toXml(X12_850_Interchange interchange) throws IOException {
         try {
-            log.debug("Converting X850Interchange to XML");
+            log.debug("Converting X12_850_Interchange to XML");
             String result = xmlMapper.writeValueAsString(interchange);
-            log.debug("Successfully converted X850Interchange to XML: {}", result);
+            log.debug("Successfully converted X12_850_Interchange to XML: {}", result);
             return result;
         } catch (Exception e) {
-            log.error("Error converting X850Interchange to XML: {}", e.getMessage(), e);
+            log.error("Error converting X12_850_Interchange to XML: {}", e.getMessage(), e);
             throw e;
         }
     }
 
 
     /**
-     * Convert X850Interchange object to JSON string.
+     * Convert X12_850_Interchange object to JSON string.
      *
-     * @param interchange The X850Interchange object to convert
-     * @return The XML string representation
+     * @param interchange The X12_850_Interchange object to convert
+     * @return The JSON string representation
      * @throws IOException If conversion fails
      */
     public static String toJson(X12_850_Interchange interchange) throws IOException {
         try {
-            log.debug("Converting X850Interchange to JSON");
+            log.debug("Converting X12_850_Interchange to JSON");
             String result = jsonMapper.writeValueAsString(interchange);
-            log.debug("Successfully converted X850Interchange to JSON: {}", result);
+            log.debug("Successfully converted X12_850_Interchange to JSON: {}", result);
             return result;
         } catch (Exception e) {
-            log.error("Error converting X850Interchange to JSON: {}", e.getMessage(), e);
+            log.error("Error converting X12_850_Interchange to JSON: {}", e.getMessage(), e);
             throw e;
         }
     }
 
     /**
-     * Converts a given X850Interchange object to its YAML string representation.
+     * Converts a given X12_850_Interchange object to its YAML string representation.
      *
-     * @param interchange The X850Interchange object to convert into YAML format.
-     * @return A string representing the YAML serialization of the given X850Interchange object.
+     * @param interchange The X12_850_Interchange object to convert into YAML format.
+     * @return A string representing the YAML serialization of the given X12_850_Interchange object.
      * @throws IOException If an error occurs during the YAML conversion process.
      */
     public static String toYaml(X12_850_Interchange interchange) throws IOException {
         String result = null;
         try {
-            log.debug("Converting X850Interchange to YAML");
+            log.debug("Converting X12_850_Interchange to YAML");
             result = yamlMapper.writeValueAsString(interchange);
-            log.debug("Successfully converted X850Interchange to YAML: {}", result);
+            log.debug("Successfully converted X12_850_Interchange to YAML: {}", result);
             return result;
         } catch (Exception e) {
-            log.error("Error converting X850Interchange to YAML: {}", e.getMessage(), e);
+            log.error("Error converting X12_850_Interchange to YAML: {}", e.getMessage(), e);
         }
         return result;
     }
@@ -195,8 +195,8 @@ public class X12_850_Parser {
     /**
      * Converts the given {@link X12_850_Interchange} object into its EDI string representation.
      *
-     * @param interchange The X850Interchange object to be converted into an EDI string.
-     * @return A string containing the EDI representation of the provided X850Interchange object.
+     * @param interchange The X12_850_Interchange object to be converted into an EDI string.
+     * @return A string containing the EDI representation of the provided X12_850_Interchange object.
      * @throws IOException If an I/O error occurs during the conversion process.
      * @throws SAXException If an error occurs while parsing the intermediate XML representation.
      */
