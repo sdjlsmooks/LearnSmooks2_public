@@ -1,20 +1,8 @@
 package org.example;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+
 import lombok.extern.java.Log;
 import org.apache.commons.cli.*;
-import org.bson.Document;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This Java program preloads data from a JSON file into a MongoDB collection.
@@ -57,7 +45,7 @@ import java.util.List;
  * ]
  */
 @Log
-public class MongoDBPreloader {
+public class ExampleApacheCommonsCLI {
 
     private static String MONGO_URI = "mongodb://localhost:27017"; // Default MongoDB URI
     private static String DEFAULT_DATABASE_NAME = "sdjltestdb"; // Default database name
@@ -181,90 +169,11 @@ public class MongoDBPreloader {
         }
     }
 
-    /**
-     * Preloads data from a JSON file into a MongoDB collection.
-     *
-     * @param dbName         The name of the MongoDB database
-     * @param collectionName The name of the MongoDB collection
-     * @param dataFileName   The path to the JSON file containing the data
-     * @param drop           Whether to drop the collection before preloading
-     * @return true if the preloading was successful, false otherwise
-     */
-    public static boolean preloadCollection(String dbName, String collectionName, String dataFileName, boolean drop) {
-        MongoClient mongoClient = null;
-        try {
-            // 1. Establish MongoDB connection
-            log.info("Connecting to MongoDB at: " + MONGO_URI);
-            mongoClient = MongoClients.create(MONGO_URI);
-            MongoDatabase database = mongoClient.getDatabase(dbName);
-            MongoCollection<Document> collection = database.getCollection(collectionName);
-
-            // Optional: Drop collection before preloading to ensure a clean start
-            if (drop) {
-                collection.drop();
-                log.info("Collection '" + collectionName + "' dropped successfully.");
-            }
-
-            // 2. Read JSON file content
-            String jsonContent = new String(Files.readAllBytes(Paths.get(dataFileName)));
-            log.info("JSON file '" + dataFileName + "' read successfully.");
-
-            // 3. Parse JSON content and prepare documents
-            List<Document> documents = new ArrayList<>();
-            // Check if the root element is an array or a single object
-            if (jsonContent.trim().startsWith("[")) {
-                JSONArray jsonArray = new JSONArray(jsonContent);
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    documents.add(Document.parse(jsonObject.toString()));
-                }
-            } else if (jsonContent.trim().startsWith("{")) {
-                JSONObject jsonObject = new JSONObject(jsonContent);
-                documents.add(Document.parse(jsonObject.toString()));
-            } else {
-                log.severe("Error: JSON file does not contain a valid JSON array or object at its root.");
-                return false;
-            }
-
-            if (documents.isEmpty()) {
-                log.info("No documents found in the JSON file to insert.");
-                return false;
-            }
-
-            // 4. Insert documents into MongoDB
-            log.info("Inserting " + documents.size() + " documents into collection '" + collectionName + "'...");
-            collection.insertMany(documents);
-            log.info("Data preloaded successfully into MongoDB collection '" + collectionName + "'.");
-            return true;
-
-        } catch (IOException e) {
-            log.severe("Error reading JSON file: " + e.getMessage());
-            log.severe("Please ensure the file path is correct and the file exists.");
-            return false;
-        } catch (Exception e) {
-            log.severe("An error occurred: " + e.getMessage());
-            e.printStackTrace();
-            return false;
-        } finally {
-            if (mongoClient != null) {
-                mongoClient.close();
-                log.info("MongoDB connection closed.");
-            }
-        }
-    }
 
     public static void main(String[] args) {
         // Parse all command line args
         // Example:  java -jar MongoDBPreloader.jar --mongourl=mongodb://localhost:27017 --dbname=sdjltestdb --collection=items --filename=C:\temp\resources\example.json --drop=yes
         // sets the DEFAULT_???? to what the command line argument say.
         parseCommandLineArgs(args);
-
-        // Call the preloadCollection method
-        boolean success = preloadCollection(DEFAULT_DATABASE_NAME, DEFAULT_COLLECTION_NAME, DEFAULT_FILENAME, DEFAULT_DROP);
-        if (success) {
-            log.info("Operation completed successfully.");
-        } else {
-            log.info("Operation failed. Check the error messages above for details.");
-        }
     }
 }

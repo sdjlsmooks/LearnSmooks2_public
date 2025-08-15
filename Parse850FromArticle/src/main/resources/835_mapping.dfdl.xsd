@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
+            xmlns:ibmEdiFmt="http://www.ibm.com/dfdl/EDI/Format"
+            xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+
+    <xsd:import namespace="http://www.ibm.com/dfdl/EDI/Format" schemaLocation="/EDIFACT-Common/IBM_EDI_Format.dfdl.xsd"/>
+
+    <xsd:annotation>
+        <xsd:appinfo source="http://www.ogf.org/dfdl/">
+            <dfdl:format ref="ibmEdiFmt:EDIFormat"/>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <xsd:element ibmSchExtn:docRoot="true" name="X12_835_Interchange">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element dfdl:initiator="ISA" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="interchange-header" type="ISA_InterchangeHeader"/>
+                <xsd:element dfdl:initiator="GS" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="group-header" type="GS_FunctionalGroupHeader"/>
+                <xsd:element dfdl:initiator="ST" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="transaction-set-header" type="ST_TransactionSetHeader"/>
+
+                <xsd:element name="HealthCareClaimPayment">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element dfdl:initiator="BPR" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="financial-information" type="BPR_Segment"/>
+                            <xsd:element dfdl:initiator="TRN" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="reassociation-trace-number" type="TRN_Segment"/>
+                            <xsd:element dfdl:initiator="CUR" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="foreign-currency-information" type="CUR_Segment" minOccurs="0"/>
+                            <xsd:element dfdl:initiator="REF" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="receiver-identification" type="REF_Segment" minOccurs="0"/>
+                            <xsd:element dfdl:initiator="DTM" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="production-date" type="DTM_Segment" minOccurs="0"/>
+
+                            <xsd:element name="Loop_1000A_Payer">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element dfdl:initiator="N1" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="payer-identification" type="Name_Segment_Type"/>
+                                        <xsd:element dfdl:initiator="N3" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="payer-address" type="Address_Segment_Type" minOccurs="0"/>
+                                        <xsd:element dfdl:initiator="N4" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="payer-city-state-zip" type="Location_Segment_Type" minOccurs="0"/>
+                                        <xsd:element dfdl:initiator="REF" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="additional-payer-id" type="REF_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xsd:element dfdl:initiator="PER" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="payer-contact-info" type="PER_Segment" minOccurs="0"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+
+                            <xsd:element name="Loop_1000B_Payee">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element dfdl:initiator="N1" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="payee-identification" type="Name_Segment_Type"/>
+                                        <xsd:element dfdl:initiator="N3" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="payee-address" type="Address_Segment_Type" minOccurs="0"/>
+                                        <xsd:element dfdl:initiator="N4" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="payee-city-state-zip" type="Location_Segment_Type" minOccurs="0"/>
+                                        <xsd:element dfdl:initiator="REF" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="payee-identification-ref" type="REF_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+
+                            <xsd:element name="Loop_2000_Header" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element dfdl:initiator="LX" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="header-number" type="LX_Segment"/>
+                                        <xsd:element dfdl:initiator="TS3" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="provider-summary-info" type="TS3_Segment" minOccurs="0"/>
+                                        <xsd:element dfdl:initiator="TS2" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="provider-supplemental-summary" type="TS2_Segment" minOccurs="0"/>
+                                        <xsd:element name="Loop_2100_ClaimPayment" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element dfdl:initiator="CLP" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="claim-payment-information" type="CLP_Segment"/>
+                                                    <xsd:element dfdl:initiator="CAS" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="claim-adjustment" type="CAS_Segment" minOccurs="0" maxOccurs="99"/>
+                                                    <xsd:element dfdl:initiator="NM1" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="patient-name" type="Name_Segment_Type"/>
+                                                    <xsd:element dfdl:initiator="NM1" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="insured-name" type="Name_Segment_Type" minOccurs="0"/>
+                                                    <xsd:element dfdl:initiator="NM1" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="corrected-patient-insured" type="Name_Segment_Type" minOccurs="0"/>
+                                                    <xsd:element dfdl:initiator="NM1" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="service-provider-name" type="Name_Segment_Type" minOccurs="0"/>
+                                                    <xsd:element dfdl:initiator="NM1" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="crossover-carrier-name" type="Name_Segment_Type" minOccurs="0"/>
+                                                    <xsd:element dfdl:initiator="NM1" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="corrected-priority-payer-name" type="Name_Segment_Type" minOccurs="0"/>
+                                                    <xsd:element dfdl:initiator="MIA" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="inpatient-adjudication" type="MIA_Segment" minOccurs="0"/>
+                                                    <xsd:element dfdl:initiator="MOA" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="outpatient-adjudication" type="MOA_Segment" minOccurs="0"/>
+                                                    <xsd:element dfdl:initiator="REF" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="other-claim-related-id" type="REF_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                    <xsd:element dfdl:initiator="DTM" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="claim-level-dates" type="DTM_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                    <xsd:element dfdl:initiator="PER" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="claim-contact-info" type="PER_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                    <xsd:element dfdl:initiator="AMT" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="claim-level-amounts" type="AMT_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                    <xsd:element dfdl:initiator="QTY" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="claim-level-quantity" type="QTY_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                    <xsd:element name="Loop_2110_ServicePayment" minOccurs="0" maxOccurs="999">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element dfdl:initiator="SVC" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="service-payment-information" type="SVC_Segment"/>
+                                                                <xsd:element dfdl:initiator="DTM" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="service-date" type="DTM_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                                <xsd:element dfdl:initiator="CAS" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="service-adjustment" type="CAS_Segment" minOccurs="0" maxOccurs="99"/>
+                                                                <xsd:element dfdl:initiator="REF" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="service-identification" type="REF_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                                <xsd:element dfdl:initiator="AMT" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="service-level-amount" type="AMT_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                                <xsd:element dfdl:initiator="QTY" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="service-level-quantity" type="QTY_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                                                                <xsd:element dfdl:initiator="LQ" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="healthcare-remark-codes" type="LQ_Segment" minOccurs="0" maxOccurs="99"/>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element dfdl:initiator="PLB" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="provider-adjustment" type="PLB_Segment" minOccurs="0" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element dfdl:initiator="SE" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="transaction-set-trailer" type="SE_TransactionSetTrailer"/>
+                <xsd:element dfdl:initiator="GE" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="functional-group-trailer" type="GE_FunctionalGroupTrailer"/>
+                <xsd:element dfdl:initiator="IEA" dfdl:ref="ibmEdiFmt:EDISegmentFormat" name="interchange-control-trailer" type="IEA_InterchangeTrailer"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="ISA_InterchangeHeader"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="I01" type="alpha2-2"/><xsd:element name="I02" type="alpha10-10"/><xsd:element name="I03" type="alpha2-2"/><xsd:element name="I04" type="alpha10-10"/><xsd:element name="I05" type="alpha2-2"/><xsd:element name="I06" type="alpha15-15"/><xsd:element name="I07" type="alpha2-2"/><xsd:element name="I08" type="alpha15-15"/><xsd:element name="I09" type="numeric6-6"/><xsd:element name="I10" type="numeric4-4"/><xsd:element name="I11" type="alpha1-1"/><xsd:element name="I12" type="numeric5-5"/><xsd:element name="I13" type="numeric9-9"/><xsd:element name="I14" type="numeric1-1"/><xsd:element name="I15" type="alpha1-1"/><xsd:element name="I16" type="alpha1-1"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="GS_FunctionalGroupHeader"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="GS01" type="alpha2-2"/><xsd:element name="GS02" type="alpha2-15"/><xsd:element name="GS03" type="alpha2-15"/><xsd:element name="GS04" type="numeric8-8"/><xsd:element name="GS05" type="numeric4-8"/><xsd:element name="GS06" type="numeric1-9"/><xsd:element name="GS07" type="alpha1-2"/><xsd:element name="GS08" type="alpha1-12"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="ST_TransactionSetHeader"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="ST01" type="numeric3-3"/><xsd:element name="ST02" type="alpha4-9"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="BPR_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="BPR01" type="alpha1-2"/><xsd:element name="BPR02" type="decimal1-18"/><xsd:element name="BPR03" type="alpha1-1"/><xsd:element name="BPR04" type="alpha3-3"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="TRN_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="TRN01" type="alpha1-2"/><xsd:element name="TRN02" type="alpha1-50"/><xsd:element name="TRN03" type="alpha10-10"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="CUR_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="CUR01" type="alpha2-3"/><xsd:element name="CUR02" type="alpha3-3"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="REF_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="REF01" type="alpha2-3"/><xsd:element name="REF02" type="alpha1-50"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="DTM_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="DTM01" type="alpha3-3"/><xsd:element name="DTM02" type="alpha8-8"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="Name_Segment_Type"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="N101" type="alpha2-3"/><xsd:element name="N102" type="alpha1-60" minOccurs="0"/><xsd:element name="N103" type="alpha1-80" minOccurs="0"/><xsd:element name="N104" type="alpha2-80" minOccurs="0"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="Address_Segment_Type"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="N301" type="alpha1-55"/><xsd:element name="N302" type="alpha1-55" minOccurs="0"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="Location_Segment_Type"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="N401" type="alpha2-30"/><xsd:element name="N402" type="alpha2-2" minOccurs="0"/><xsd:element name="N403" type="numeric3-15" minOccurs="0"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="PER_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="PER01" type="alpha2-2"/><xsd:element name="PER02" type="alpha1-60" minOccurs="0"/><xsd:element name="PER03" type="alpha2-2"/><xsd:element name="PER04" type="alpha1-256"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="LX_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="LX01" type="numeric1-6"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="TS3_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="TS301" type="alpha2-80"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="TS2_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="TS201" type="decimal1-18"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="CLP_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="CLP01" type="alpha1-38"/><xsd:element name="CLP02" type="numeric1-2"/><xsd:element name="CLP03" type="decimal1-18"/><xsd:element name="CLP04" type="decimal1-18"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="CAS_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="CAS01" type="alpha1-2"/><xsd:element name="CAS02" type="alpha1-5"/><xsd:element name="CAS03" type="decimal1-18"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="MIA_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="MIA01" type="decimal1-18"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="MOA_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="MOA01" type="decimal1-18" minOccurs="0"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="AMT_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="AMT01" type="alpha1-3"/><xsd:element name="AMT02" type="decimal1-18"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="QTY_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="QTY01" type="alpha2-2"/><xsd:element name="QTY02" type="decimal1-15"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="SVC_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="SVC01" type="alpha1-80"/><xsd:element name="SVC02" type="decimal1-18"/><xsd:element name="SVC03" type="decimal1-18"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="LQ_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="LQ01" type="alpha2-2"/><xsd:element name="LQ02" type="alpha1-30"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="PLB_Segment"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="PLB01" type="alpha2-80"/><xsd:element name="PLB02" type="numeric8-8"/><xsd:element name="PLB03" type="alpha1-50"/><xsd:element name="PLB04" type="decimal1-18"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="SE_TransactionSetTrailer"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="SE01" type="numeric1-10"/><xsd:element name="SE02" type="alpha4-9"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="GE_FunctionalGroupTrailer"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="GE01" type="numeric1-6"/><xsd:element name="GE02" type="numeric1-9"/></xsd:sequence></xsd:complexType>
+    <xsd:complexType name="IEA_InterchangeTrailer"><xsd:sequence dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat"><xsd:element name="IEA01" type="numeric1-5"/><xsd:element name="IEA02" type="numeric9-9"/></xsd:sequence></xsd:complexType>
+
+    <xsd:simpleType name="alpha1-1"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="1"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-2"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="2"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-3"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="3"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha2-2"><xsd:restriction base="xsd:string"><xsd:minLength value="2"/><xsd:maxLength value="2"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha2-3"><xsd:restriction base="xsd:string"><xsd:minLength value="2"/><xsd:maxLength value="3"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha3-3"><xsd:restriction base="xsd:string"><xsd:minLength value="3"/><xsd:maxLength value="3"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-5"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="5"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha2-15"><xsd:restriction base="xsd:string"><xsd:minLength value="2"/><xsd:maxLength value="15"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha4-9"><xsd:restriction base="xsd:string"><xsd:minLength value="4"/><xsd:maxLength value="9"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-12"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="12"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-30"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="30"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-38"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="38"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-50"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="50"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-55"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="55"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-60"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="60"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-80"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="80"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha2-30"><xsd:restriction base="xsd:string"><xsd:minLength value="2"/><xsd:maxLength value="30"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha2-80"><xsd:restriction base="xsd:string"><xsd:minLength value="2"/><xsd:maxLength value="80"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha1-256"><xsd:restriction base="xsd:string"><xsd:minLength value="1"/><xsd:maxLength value="256"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha10-10"><xsd:restriction base="xsd:string"><xsd:minLength value="10"/><xsd:maxLength value="10"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha15-15"><xsd:restriction base="xsd:string"><xsd:minLength value="15"/><xsd:maxLength value="15"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric1-1"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{1}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric1-2"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{1,2}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric3-3"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{3}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric1-5"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{1,5}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric1-6"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{1,6}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric1-9"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{1,9}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric1-10"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{1,10}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric3-15"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{3,15}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric4-4"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{4}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric4-8"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{4,8}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric5-5"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{5}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric6-6"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{6}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric8-8"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{8}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="numeric9-9"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9]{9}"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="decimal1-15"><xsd:restriction base="xsd:string"><xsd:pattern value="-?[0-9]{1,13}(\.[0-9]{1,2})?"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="decimal1-18"><xsd:restriction base="xsd:string"><xsd:pattern value="-?[0-9]{1,16}(\.[0-9]{1,2})?"/></xsd:restriction></xsd:simpleType>
+    <xsd:simpleType name="alpha8-8"><xsd:restriction base="xsd:string"><xsd:minLength value="8"/><xsd:maxLength value="8"/></xsd:restriction></xsd:simpleType>
+</xsd:schema>
